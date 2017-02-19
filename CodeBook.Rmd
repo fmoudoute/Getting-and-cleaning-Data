@@ -1,0 +1,47 @@
+---
+title: "CodeBook"
+output: html_document
+---
+# Getting and Cleaning Data Project
+
+### Variables and their observation
+
+```{r echo=FALSE}
+Variable <- c("Subject", "Metrics", "Activity", "Features","Measurement Subsets")
+Var_Frequency <- c(30, 24, 6, 561,2)
+VariableTable <- as.data.frame(cbind(Variable, Var_Frequency))
+VariableTable
+```
+
+### List of mertrics labelled as FEATURES
+
+```{r echo=FALSE}
+Metrics <- read.csv("/Users/Mood/Documents/Getting-and-cleaning-Data/metrics.csv")
+Metrics
+```
+
+### List of activities during which metrics/features are recorded using either an accelerometer or a gyroscope
+
+```{r echo=FALSE}
+Activity <- c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING")
+Activity
+```
+
+
+### Data sets description
+##### Data are collected from 8 datasets, in which 6 have 2 subsets: Training & Test. 70% of observation will be stored as "training" observation, with the balance labelled under "Testing". Data sets include:
+##### - 'features_info.txt': Shows information about the variables used on the feature vector.
+##### - 'features.txt': List of all features.
+##### - 'activity_labels.txt': Links the class labels with their activity name.
+##### - 'train/X_train.txt': Training set.
+##### - 'train/y_train.txt': Training labels.
+##### - 'test/X_test.txt': Test set.
+##### - 'test/y_test.txt': Test labels.
+
+
+### Data processing & treament
+##### - The training and test subsets are merged
+##### - Columns are renamed to ease the data handling
+##### - Columns with data related to the standard deviation or the mean are isolated in a new dataset (MegaDataSet)
+##### - The resulting table is then  grouped by subjects and activities to calculate their respective means.
+##### - Columns are renamed again to ease the reading of the metrics/features.
