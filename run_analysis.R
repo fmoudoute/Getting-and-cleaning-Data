@@ -79,7 +79,7 @@ names(AverageDataSetFinal) <-
   gsub("Acc", "Accelerometer", names(AverageDataSetFinal))
 names(AverageDataSetFinal) <-
   gsub("Gyro", "Gyroscope", names(AverageDataSetFinal))
-names(AverageDataSetFinalta) <-
+names(AverageDataSetFinal) <-
   gsub("Mag", "Magnitude", names(AverageDataSetFinal))
 names(AverageDataSetFinal) <-
   gsub("BodyBody", "Body", names(AverageDataSetFinal))
